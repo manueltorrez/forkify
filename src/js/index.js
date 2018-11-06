@@ -39,6 +39,7 @@ const controlSearch = async () => {
         } catch (error) {
             alert('Something went wrong with the search');
             clearLoader();
+            console.log(error);
         }
     }
 }
@@ -73,8 +74,9 @@ const controlRecipe = async () => {
         state.recipe = new Recipe(id);
 
         try {
-            // Get Recipe data
+            // Get Recipe data and parse ingredients
             await state.recipe.getRecipe();
+            state.recipe.parseIngredients();
     
             // Calculate servings and time
             state.recipe.calcServings();
@@ -85,6 +87,7 @@ const controlRecipe = async () => {
 
         } catch (error) {
             alert('Error processing recipe!');
+            console.log(error);
         }
     }
 
