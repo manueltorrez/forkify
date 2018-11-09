@@ -142,6 +142,13 @@ elements.shopping.addEventListener('click', e => {
 });
 
 
+/**
+ * RECIPE CONTROLLER
+ */
+
+
+
+
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
     if(e.target.matches('.btn-decrease, .btn-decrease *')) {
@@ -156,6 +163,7 @@ elements.recipe.addEventListener('click', e => {
         recipeView.updateServingsIngredients(state.recipe);
 
     } else if(e.target.matches('.recipe__btn--add, recipe__btn--add *')) {
+        //Add ingredients to shopping list
         controlList();
     }
 
