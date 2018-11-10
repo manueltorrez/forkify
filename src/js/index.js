@@ -16,14 +16,12 @@ import { elements, renderLoader, clearLoader } from './views/base';
  * - Liked recipes
  */
 const state = {};
-window.state = state;
 /**
  * SEARCH CONTROLLER
  */
 const controlSearch = async () => {
     // 1) Get query from the view
     const query = searchView.getInput();
-    console.log(query);
 
     if(query) {
         // 2) New search object and add to state
@@ -109,6 +107,7 @@ const controlRecipe = async () => {
 // window.addEventListener('load', controlRecipe);
 
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
+
 
 /**
  * LIST CONTROLLER
@@ -219,6 +218,3 @@ elements.recipe.addEventListener('click', e => {
     }
 
 });
-
-
-window.l = new List();
